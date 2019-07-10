@@ -139,8 +139,49 @@ int writeImgToFile() {
 
 	return 0;
 }
+
+//-----------------------图像的载入和显示----------
+void showMat() {
+	Mat gril = imread("girl.jpg");
+	imshow("[1]动漫gril图", gril);
+	cv::waitKey();
+}
+
+//--------------初级图像混合-------------------
+void remixImg() {
+	//载入图片
+	Mat image = imread("dota.jpg");
+	Mat logo = imread("dota_logo.jpg");
+
+	//载入后先显示
+	//namedWindow("[2]原画图");
+	imshow("[2]原画图", image);
+	
+	//namedWindow("[3]logo图");
+	imshow("[2]logo图", logo);
+	//cv::waitKey(0);
+	//定义一个Mat类型用于存放，图像的ROI
+	Mat imageROI;
+	//方法一
+	//imageROI = image(Rect(800, 350, logo.cols, logo.rows));
+	//方法二
+	imageROI = image(Range(350, 350 + logo.rows), Range(800, 800 + logo.cols));
+
+	//将logo加到原图上
+	addWeighted(imageROI, 0.5, logo, 0.3, 0., imageROI);
+
+	namedWindow("[4]原图+logo图");
+	imshow("[4]原图+logo图", image);
+
+	imwrite("由imwrite生成的图片.jpg", image);
+	cv::waitKey(0);
+}
+
+
 int main() {
 	//std::cout << "helloworld" << endl;
-	writeImgToFile();
+	//writeImgToFile();
+	//showMat();
+	remixImg();
 	return 0;
 }
