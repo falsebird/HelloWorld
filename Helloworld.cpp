@@ -178,10 +178,10 @@ void remixImg() {
 }
 
 
-int main() {
-	//std::cout << "helloworld" << endl;
-	//writeImgToFile();
-	//showMat();
-	remixImg();
-	return 0;
-}
+//int main() {
+//	//std::cout << "helloworld" << endl;
+//	//writeImgToFile();
+//	//showMat();
+//	//remixImg();
+//	return 0;
+//}
