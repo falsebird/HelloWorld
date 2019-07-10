@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="CreateTra.cpp" />
     <ClCompile Include="Helloworld.cpp" />
+    <ClCompile Include="_UseMouse.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

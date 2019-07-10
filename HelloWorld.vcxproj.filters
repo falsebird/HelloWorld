@@ -21,5 +21,8 @@
     <ClCompile Include="CreateTra.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="_UseMouse.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

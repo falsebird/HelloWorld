@@ -33,32 +33,32 @@ void on_Trackbar(int , void*){
 //--------------------------------------【main( )函数】-----------------------------------------
 //		描述：控制台应用程序的入口函数，我们的程序从这里开始执行
 //-----------------------------------------------------------------------------------------------
-int main(int argc, char** argv)
-{
-
-	//加载图像 (两图像的尺寸需相同)
-	g_srcImage1 = imread("1.jpg");
-	g_srcImage2 = imread("2.jpg");
-	if (g_srcImage1.empty()) { printf("读取第一幅图片错误，请确定目录下是否有imread函数指定图片存在~！ \n"); return -1; }
-	if (g_srcImage2.empty()) { printf("读取第二幅图片错误，请确定目录下是否有imread函数指定图片存在~！\n"); return -1; }
-
-	//设置滑动条初值为70
-	g_nAlphaValueSlider = 70;
-
-	//创建窗体
-	namedWindow(WINDOW_NAME, 1);
-
-	//在创建的窗体中创建一个滑动条控件
-	char TrackbarName[50]="透明值";
-	
-
-	createTrackbar(TrackbarName, WINDOW_NAME, &g_nAlphaValueSlider, g_nMaxAlphaValue, on_Trackbar);
-
-	//结果在回调函数中显示
-	on_Trackbar(g_nAlphaValueSlider, 0);
-
-	//按任意键退出
-	cv::waitKey(0);
-
-	return 0;
-}
+//int main(int argc, char** argv)
+//{
+//
+//	//加载图像 (两图像的尺寸需相同)
+//	g_srcImage1 = imread("1.jpg");
+//	g_srcImage2 = imread("2.jpg");
+//	if (g_srcImage1.empty()) { printf("读取第一幅图片错误，请确定目录下是否有imread函数指定图片存在~！ \n"); return -1; }
+//	if (g_srcImage2.empty()) { printf("读取第二幅图片错误，请确定目录下是否有imread函数指定图片存在~！\n"); return -1; }
+//
+//	//设置滑动条初值为70
+//	g_nAlphaValueSlider = 70;
+//
+//	//创建窗体
+//	namedWindow(WINDOW_NAME, 1);
+//
+//	//在创建的窗体中创建一个滑动条控件
+//	char TrackbarName[50]="透明值";
+//	
+//
+//	createTrackbar(TrackbarName, WINDOW_NAME, &g_nAlphaValueSlider, g_nMaxAlphaValue, on_Trackbar);
+//
+//	//结果在回调函数中显示
+//	on_Trackbar(g_nAlphaValueSlider, 0);
+//
+//	//按任意键退出
+//	cv::waitKey(0);
+//
+//	return 0;
+//}
