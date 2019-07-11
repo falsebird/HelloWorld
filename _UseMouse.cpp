@@ -56,10 +56,10 @@ void on_MouseHandle(int event, int x, int y, int flags, void* param) {
 	Mat& image = *(cv::Mat*) param;
 	switch (event) {
 		//鼠标移动消息
-		case EVENT_MOUSEHWHEEL: {
+		case EVENT_MOUSEMOVE: {
 			if (g_bDrawingBox) {
 				g_rectangle.width = x - g_rectangle.x;
-				g_rectangle.height = x - g_rectangle.y;
+				g_rectangle.height = y - g_rectangle.y;
 			}
 		}
 			break;
